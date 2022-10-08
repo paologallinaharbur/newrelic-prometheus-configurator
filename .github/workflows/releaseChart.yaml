@@ -77,7 +77,8 @@ jobs:
           git add ${{ env.MARKDOWN_FILE }}/CHANGELOG.md
           git add ${{ env.MARKDOWN_FILE }}/Chart.yaml
           git commit -m "Update changelog and Chart.yaml with changes from ${{ steps.version.outputs.next-version }}"
-          git push -u origin main
+          # TODO fix tag once it is merged
+          git push -u origin feat/chartRelease
       - uses: newrelic/release-toolkit/render@v1
       - name: Release workload charts
         uses: helm/chart-releaser-action@v1
