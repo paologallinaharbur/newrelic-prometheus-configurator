@@ -115,9 +115,9 @@ CHART_PREFIX=newrelic-prometheus-agent-
 
 .PHONY: release-notes-chart
 release-notes-chart: _release-changes-chart
-	@$(RT_BIN) render-changelog
+	@$(RT_BIN) render-changelog --markdown ${CHART_DIRECTORY}/release-notes.md
 	@echo "RELEASE NOTES:\n"
-	@cat CHANGELOG.partial.md
+	@cat ${CHART_DIRECTORY}/release-notes.md
 
 ### Upgrades the CHANGELOG.md as if a Release is being triggered.
 .PHONY: release-changelog-chart

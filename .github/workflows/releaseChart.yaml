@@ -80,6 +80,8 @@ jobs:
           # TODO fix tag once it is merged
           git push -u origin feat/chartRelease
       - uses: newrelic/release-toolkit/render@v1
+        with:
+          markdown: ${{ env.CHART_DIRECTORY }}/release-notes.md
       - name: Release workload charts
         uses: helm/chart-releaser-action@v1
         with:
