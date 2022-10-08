@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.1.0 - 2022-10-08
+
+### ⛓️ Dependencies
+- Upgraded github.com/spf13/viper from 1.12.0 to 1.13.0 [Changelog](https://github.com/spf13/viper/releases/tag/1.13.0)
+
 ## v0.0.7 - 2022-10-08
 
 ### 🐞 Bug fixes
