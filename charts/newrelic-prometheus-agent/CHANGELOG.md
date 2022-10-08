@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### 🐞 Bugfixes
+- Fixed a security issue
+
 ## [0.0.5] - 2022-10-06
 ### Changed
 - `newrelic-prometheus-configurator` image bumped `0.0.1` -> `0.0.2`.
