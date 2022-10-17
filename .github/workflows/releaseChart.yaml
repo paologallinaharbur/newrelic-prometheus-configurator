@@ -11,6 +11,8 @@ env:
   CHART_DIRECTORY: 'charts/newrelic-prometheus-agent'
   CHART_PREFIX: 'newrelic-prometheus-agent-'
 
+permissions: write-all
+
 jobs:
   # Sometimes chart-releaser might fetch an outdated index.yaml from gh-pages, causing a WAW hazard on the repo
   # This job checks the remote file is up to date with the local one on release
@@ -64,10 +66,6 @@ jobs:
         uses: mikefarah/yq@master
         with:
           cmd: yq e -i '.version="${{ steps.version.outputs.next-version }}"' charts/newrelic-prometheus-agent/Chart.yaml
-      - name: Configure Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - uses: newrelic/release-toolkit/update-markdown@v1
         with:
           version: ${{ steps.version.outputs.next-version }}
