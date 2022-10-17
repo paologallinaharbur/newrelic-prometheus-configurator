@@ -66,6 +66,10 @@ jobs:
         uses: mikefarah/yq@master
         with:
           cmd: yq e -i '.version="${{ steps.version.outputs.next-version }}"' charts/newrelic-prometheus-agent/Chart.yaml
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - uses: newrelic/release-toolkit/update-markdown@v1
         with:
           version: ${{ steps.version.outputs.next-version }}
