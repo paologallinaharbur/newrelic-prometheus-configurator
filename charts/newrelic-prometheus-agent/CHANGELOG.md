@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### enhancement
+- The chart is now published leveraging the release toolkit.
+- The chart release notes from now on will be available in the chart package and in the GitHub release notes.
+
+
 ## v0.2.0 - 2022-10-17
 
 ### 🚀 Enhancements
