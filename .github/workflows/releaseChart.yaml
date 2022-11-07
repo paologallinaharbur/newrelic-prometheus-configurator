@@ -4,6 +4,11 @@ name: Release newrelic prometheus configurator chart
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version including "v" prefix eg: v0.0.1'
+        required: false
+        type: string
 
 concurrency: helm-charts
 
@@ -62,6 +67,9 @@ jobs:
           dictionary: .github/rt-dictionary.yaml
       - uses: newrelic/release-toolkit/next-version@v1
         id: version
+        env:
+          # if specified the version will be not computed
+          NEXT: "${{ inputs.version }}"
         with:
           tag-prefix: ${{  env.CHART_TAG_PREFIX }}
           output-prefix: ""
